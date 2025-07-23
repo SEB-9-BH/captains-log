@@ -153,10 +153,13 @@ Index, New and Create has been completed for you.
 1. change the `res.send` to a `res.redirect` to your index page
 1. don't forget to `git add` and `git commit` your work, give yourself an informative commit message so you can trace back your work, if you need to
 
-### Router
+### Controllers
 1. `mkdir controllers`
-1. `touch controllers/logs.js`
-1. work on refactoring your code so your logs routes are in your controller file, rather than in `server.js`
+1. `touch controllers/routeController.js controllers/viewController.js controllers/dataController.js`
+1. work on refactoring your code so your logs routes are in your controller file, rather than in `server.js` and the logic is split appropriately
+
+### Layout
+1. use static files and Layout to add styling to each page and make the pages look beautiful.
 
 
 ### Bonuses
