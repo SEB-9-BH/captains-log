@@ -32,7 +32,7 @@ There are many ways to get started building an app. This lab follows a specific 
  - to give you an order to guide you to create small bits of functionality and test each one before moving on to the next part
 
 If you finish lab early consider:
-  - adding some CSS and practice styling your app
+  - adding some more CSS and practice styling your app
   - try working with the date object! Try to make it look human readable in HTML. It's tricky! [A Hint](https://momentjs.com/)
   - try working through the next section of the lab before it is covered in lecture - see what you can figure out
   - **SUPER BONUS** - Once you finish this whole lab, add a second model for comments, it should have the name of the person who wrote it, and some text for the comment (maybe time stamps?). This model should 'belong' the the post, the data should be related in some way. Do your own research on how to set up a `one-to-many` relationship (one post can have many comments, one comment only belongs to one post), in MongoDB. Use Mongo Documents, Google.
@@ -54,8 +54,10 @@ Index, New and Create has been completed for you.
 |6| Update |||||
 |7| Destroy ||||||
 
-1. In your `student_labs` folder
-1. `mkdir captains_log`
+1. Cd Into your `code/ga/labs` folder
+1. fork this repo
+1. clone your fork
+1. `mkdir captains_log` in your local fork
 1. `cd catpains_log`
 1. create a new express app
 
