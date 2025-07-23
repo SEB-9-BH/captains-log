@@ -21,9 +21,17 @@ app.use(methodOverride('_method')) // <====== add method override
 app.use(express.static('public'))
 //
 app.get('/', (req,res) => {
+    res.send('New')
+})
+//new
+app.get('/logs/new', (req,res) => {
     res.render('logs/New')
 })
 
+//create
+app.get('/logs', async (req,res) => {
+    res.send('received')
+})
 
 app.listen(PORT, ()=> {
     console.log('the app is running')
