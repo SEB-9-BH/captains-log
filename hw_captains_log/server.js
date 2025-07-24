@@ -4,6 +4,8 @@ const app = express()
 const jsxEngine = require('jsx-view-engine')
 const db = require('./models/db')
 const methodOverride = require('method-override')
+const logsRouter = require('./controllers/routeController')
+
 const PORT = process.env.PORT || 3000
 
 
