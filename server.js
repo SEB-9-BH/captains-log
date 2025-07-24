@@ -5,6 +5,7 @@ const methodOverride = require('method-override')
 const logRouter = require('./controllers/routeController')
 const Log = require('./models/log')
 const db = require('./models/db')
+const log = require('./models/log')
 const PORT = process.env.PORT || 3000
 
 //middleware
@@ -22,6 +23,20 @@ app.use(express.static('public'))
 app.get('/', (req,res) => {
     res.send('New')
 })
+//Index
+app.get('/logs', async (req,res) => {
+        try {
+            const logs = await Log.find({})
+            res.render('logs/Index', {
+                logs
+            })
+    
+        } catch (error) {
+                res.status(400).send({ message: error.message})
+    }
+
+})
+
 //new
 app.get('/logs/new', (req,res) => {
     res.render('logs/New')
