@@ -163,6 +163,8 @@ Index, New and Create has been completed for you.
 ### Layout
 1. use static files and Layout to add styling to each page and make the pages look beautiful.
 
+### Data
+1. move your mongoose connection code into it's own file and import it into the server
 
 ### Bonuses
 1. The captain wants to keep track of eating habits: make a new set of routes in a new file in your controller folder called foodlogs
