@@ -1,18 +1,16 @@
-require('dotenv').config()
 const express = require('express')
 const app = express()
-const mongoose = require('mongoose')
 const jsxEngine = require('jsx-view-engine')
 const methodOverride = require('method-override') 
 const logRouter = require('./controllers/routeController')
+const db = require('./models/db')
 const PORT = process.env.PORT || 3000
 
 //middleware
 app.set('view engine', 'jsx')
 app.engine('jsx', jsxEngine())
 
-mongoose.connect(process.env.MONGO_URI)
-mongoose.connection.once('open', () => {
+db.once('open', () => {
     console.log('connected to mongo')
 })
 
@@ -29,8 +27,9 @@ app.get('/logs/new', (req,res) => {
 })
 
 //create
-app.get('/logs', async (req,res) => {
-    res.send('received')
+app.post('/logs', async (req,res) => {
+    req.body.shipIsBroken === 'on' || req.body.shipIsBroken === true ? req.body.shipIsBroken = true : req.body.shipIsBroken = false
+    res.send(req.body)
 })
 
 app.listen(PORT, ()=> {
