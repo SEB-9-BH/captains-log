@@ -9,7 +9,7 @@ function New (props) {
                 Is it broken?: <input type="checkbox" name="shipIsBroken" /><br/>
                 <input type="submit" value="Create log" />
             </form>
-\
+
         </div>
     )
 }

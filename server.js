@@ -3,6 +3,7 @@ const app = express()
 const jsxEngine = require('jsx-view-engine')
 const methodOverride = require('method-override') 
 const logRouter = require('./controllers/routeController')
+const Log = require('./models/log')
 const db = require('./models/db')
 const PORT = process.env.PORT || 3000
 
@@ -26,11 +27,34 @@ app.get('/logs/new', (req,res) => {
     res.render('logs/New')
 })
 
+//show
+
+app.get('/logs/:id', async (req, res) => {
+    try {
+        const foundLog = await Log.findById(req.params.id);
+        if(!foundLog) {
+             throw new Error('No log with that Id is in our database')
+        }
+
+        res.render('./logs/Show', {
+             log : foundLog 
+            });
+    } catch (error) {
+        res.status(400).send({ message: error.message });
+    }
+});
 //create
 app.post('/logs', async (req,res) => {
     req.body.shipIsBroken === 'on' || req.body.shipIsBroken === true ? req.body.shipIsBroken = true : req.body.shipIsBroken = false
-    res.send(req.body)
-})
+    try {
+        const createdLog = await Log.create(req.body);
+        res.redirect(`/logs/${createdLog._id}`); 
+    } catch (error) {
+        res.status(400).send({ message: error.message });
+    }
+});
+
+
 
 app.listen(PORT, ()=> {
     console.log('the app is running')
