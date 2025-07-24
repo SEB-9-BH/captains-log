@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Exo 2';
+    background-color: #fcfdf1;
+    color: brown;
+}
+input{
+    border-color: brown;
+    color : brown;
+    margin: 5px;
+}
+.sub{
+    border-color: brown;
+    color : brown;
+    margin: 5px;
+    background-color: #fcfdf1;
+}
+
+.sub:hover{
+    background-color: brown;
+    color: #fcfdf1;
+}
+a{
+    margin: 5px;
+    text-decoration-color: brown;
+    color: brown;
+}
+li{
+    margin: 5px;
+}
