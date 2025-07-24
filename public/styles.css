@@ -1,0 +1,197 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px 40px; /* a bit more horizontal padding for breathing room */
+    border-radius: 12px; /* slightly rounder corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* softer shadow with a bit more spread */
+}
+
+h1 {
+    color: #1d3557;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.create-link {
+    display: inline-block;
+    margin-bottom: 24px; /* a little more spacing */
+    font-weight: 700;
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.create-link:hover {
+    color: #005fa3;
+    text-decoration: underline;
+}
+
+.log-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.log-item {
+    background-color: #fafafa;
+    border-left: 6px solid #0077cc;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.log-item:hover {
+    background-color: #f0f7ff;
+}
+
+.log-title {
+    font-weight: 700;
+    color: #0077cc;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.log-title:hover {
+    color: #005fa3;
+    text-decoration: underline;
+}
+
+.log-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+.btn.delete {
+    background-color: #e63946;
+    color: white;
+}
+
+.btn.delete:hover {
+    background-color: #b92a36;
+}
+
+.btn.edit {
+    background-color: #2a9d8f;
+    color: white;
+}
+
+.btn.edit:hover {
+    background-color: #1f6d6a;
+}
+
+/* ===== Show Page Specific Styles ===== */
+.show-page {
+    padding: 32px 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.show-title {
+    color: #1d3557;
+    font-size: 2.2em;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.show-entry {
+    font-size: 1.15em;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.show-status {
+    font-size: 1.15em;
+    margin-bottom: 24px;
+}
+
+.status-broken {
+    color: #e63946;
+    font-weight: 700;
+}
+
+.status-ok {
+    color: #2a9d8f;
+    font-weight: 700;
+}
+
+/* ===== Edit Page Specific Styles ===== */
+.edit-page {
+    background-color: #fff;
+    padding: 32px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.edit-title {
+    font-size: 2em;
+    color: #1d3557;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #444;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #bbb;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #0077cc;
+    box-shadow: 0 0 8px rgba(0, 119, 204, 0.3);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-checkbox {
+    transform: scale(1.3);
+    cursor: pointer;
+}
