@@ -1,0 +1,27 @@
+{
+  "name": "captains-log",
+  "version": "1.0.0",
+  "description": "---\r track: \"Backend Fundamentals\"\r type: \"lab\"\r topics: \"CRUD, MVC, REST, INDUCES and JSX: Full Crud \"\r prereqs: \"HTML & CSS, Mongoose, REST, Node & NPM, Express, JavaScript, Events\"\r ---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammedali320/captains-log.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammedali320/captains-log/issues"
+  },
+  "homepage": "https://github.com/mohammedali320/captains-log#readme",
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "jsx-view-engine": "^1.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.16.4"
+  }
+}
