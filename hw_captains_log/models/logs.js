@@ -11,4 +11,4 @@ const logSchema = new mongoose.Schema(
     }
 )
 
-module.exports =  mongoose.model('Fruit',fruitSchema)
+module.exports =  mongoose.model('log',logSchema)

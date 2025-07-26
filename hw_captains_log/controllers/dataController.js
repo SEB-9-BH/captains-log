@@ -1,66 +1,62 @@
-/*
-const Fruit = require('../models/fruit.js');
+const log = require('../models/logs.js')
 
-const dataController = {}
-dataController.index = async (req,res,next) => {
-   try {
-    res.locals.data.fruits = await Fruit.find({})
-    next()
-   } catch(error) {
-    res.status(400).send({ message: error.message })
+
+const dataController = {};
+
+// INDEX
+dataController.index = async (req, res, next) => {
+  try {
+    res.locals.data = {};
+    res.locals.data.logs = await log.find({});
+    next();
+  } catch (error) {
+    res.status(400).send({ message: error.message });
   }
-}
+};
 
-dataController.destroy = async (req, res, next ) => {
-    try {
-         await Fruit.findOneAndDelete({'_id': req.params.id }).then(() => {
-            next()
-         })
-    } catch (error) {
-      res.status(400).send({ message: error.message })
-    }
-}
-
-dataController.update = async (req, res, next) => {
-    if(req.body.expired === 'on'){
-        req.body.expired = true;
-    } else if(req.body.expired !== true) {
-        req.body.expired = false;
-    }
-    try {
-      res.locals.data.fruit = await Fruit.findByIdAndUpdate(req.params.id, req.body, { new: true })
-      next()
-    } catch (error) {
-      res.status(400).send({ message: error.message })
-    }
-}
-
+// CREATE
 dataController.create = async (req, res, next) => {
-    if(req.body.expired === 'on'){
-        req.body.expired = true;
-    } else if(req.body.expired !== true) {
-        req.body.expired = false;
-    }
-    try {
-      res.locals.data.fruit = await Fruit.create(req.body)
-      next()
-    } catch (error) {
-      res.status(400).send({ message: error.message })
-    }
-}
+  req.body.shipIsBroken = req.body.shipIsBroken === 'true';
+  try {
+    res.locals.data = {};
+    res.locals.data.log = await log.create(req.body);
+    next();
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+};
 
+// SHOW
 dataController.show = async (req, res, next) => {
-    try {
-        res.locals.data.fruit = await Fruit.findById(req.params.id)
-        if(!res.locals.data.fruit){
-            throw new error(`could not locate a fruit with the id ${req.params.id}`)
-        }
-        next()
-    } catch (error) {
-      res.status(400).send({ message: error.message })
-    }
-}
+  try {
+    res.locals.data = {};
+    res.locals.data.log = await log.findById(req.params.id);
+    next();
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+};
 
+// DELETE
+dataController.destroy = async (req, res, next) => {
+  try {
+    await log.findOneAndDelete({ _id: req.params.id });
+    next();
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+};
 
-module.exports = dataController
-*/
+// UPDATE
+dataController.update = async (req, res, next) => {
+  req.body.shipIsBroken = req.body.shipIsBroken === 'true';
+  try {
+    res.locals.data = {};
+    res.locals.data.log = await log.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    next();
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+};
+
+module.exports = dataController;

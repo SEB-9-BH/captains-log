@@ -1,27 +1,24 @@
-/*
 const RESOURCE_PATH = '/logs'
+
 const viewController = {
-  index(req, res, next){
-    res.render('logs/Index', res.locals.data)
+  index(req, res) {
+    res.render('logs/Index', { logs: res.locals.data.logs });
   },
-  show(req, res, next){
-    res.render('logs/Show', res.locals.data)
+  newView(req, res) {
+    res.render('logs/New');
   },
-  edit(req, res, next){
-    res.render('logs/Edit', res.locals.data)
+  showView(req, res) {
+    res.render('logs/Show', { log: res.locals.data.log });
   },
-  newView(req, res, next){
-    res.render('logs/New')
+  editView(req, res) {
+    res.render('logs/Edit', { log: res.locals.data.log });
   },
-  redirectHome(req, res, next){
-    res.redirect(RESOURCE_PATH)
+  redirectShow(req, res) {
+    res.redirect(`/logs/${res.locals.data.log._id}`);
   },
-  redirectShow(req, res, next){
-    res.redirect(RESOURCE_PATH + `/${req.params.id}`)
+  redirectHome(req, res) {
+    res.redirect('/logs');
   }
-}
+};
 
-
-module.exports = viewController
-
-*/
+module.exports = viewController;
