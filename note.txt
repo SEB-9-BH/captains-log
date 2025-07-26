@@ -1,0 +1,95 @@
+Original Routes in server.js without using controllers 
+Are these 
+
+
+
+
+//Index --> get ( find() )
+app.get('/logs', async (req, res) =>{
+    try {
+        const logs = await log.find({}) // <-- data
+        res.render('/logs/Index', {
+            logs
+        })
+    }
+    catch(error) {
+        res.status(400).send(
+            {message: error.message}
+        )
+    }
+})
+//Destroy --> delete ( findOneAndDelete() )
+app.delete('/logs/:id', async (req, res) => {
+    try{
+     await Log.findOneAndDelete({'_id' : req.params.id}) // <-- data
+     res.redirect('/logs')
+    }
+    catch(error) {
+        res.status(400).send(
+            {message: error.message}
+        )
+    }
+})
+//Update --> put ( findOneAndUpdate() )
+app.put('/logs/:id', async (req, res) => {
+    try{
+        await Log.findOneAndUpdate({'_id' :req.params.id})// <-- data
+        .then( () => {
+            res.redirect(`/logs/${req.params.id}`)
+        })
+    }
+    catch(error){
+        res.status(400).send(
+            {message: error.message}
+        )
+    } 
+})
+//Create --> post (create() )
+app.post('/logs/', async (req, res) => {
+    try{
+        const createdLog = await Log.create(req.body) // <-- data
+        res.redirect(`logs/${createdLog._id}`)
+    }
+    catch(error) {
+        res.status(400).send(
+            {message: error.message}
+        )
+    }
+})
+
+//Edit --> get ( findById() )
+app.get('/logs/:id', async (req, res) => {
+    try{
+        const foundLog = await Log.findById(req.params.id) // <-- data
+        if(!foundLog) {
+            throw new error('There is no Log with that Id in our databse')
+        } else {
+            res.render('logs/Edit' , {
+                Log : foundLog
+            })
+        }
+    }
+    catch(error) {
+        res.status(400).send(
+            {message: error.message}
+        )
+    }
+})
+//Show -->get ( findById() )
+app.get('/logs/:id', async (req, res) => {
+    try {
+        const foundLog = await Log.findById(req.params.id) //<-- data 
+        if (!foundLog) {
+            throw new error('There is no Log with that Id in our database')
+        } else {
+            res.render('logs/Show', {
+                Log : foundLog
+            })
+        }
+    }
+    catch(error) {
+        res.status(400).send(
+            {message: error.message}
+        )
+    }
+})
