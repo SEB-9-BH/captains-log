@@ -1,0 +1,91 @@
+*> *{
+    color:black;
+}
+ul{
+    list-style-type: none;
+    margin:0 10px;
+    padding-left: 0;   
+}
+div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+div> *{
+ border: 2px solid black;
+}
+h1{
+    font-size: xx-large;
+    color:rgb(170, 234, 255);
+
+}
+a{
+    color:rgb(170, 234, 255);
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+a:hover{
+    color: rgb(56, 175, 215);
+}
+li{
+    display: flex;
+    background-color: darkgray;
+    margin: 10px 0 10px 0 ;
+    border: 2px solid black;
+    padding: 0;
+    display: flex;
+
+}
+li> *{
+    width: 100%;
+    
+}
+/* .logSection{
+    background-color: darkgray;
+    margin: 10px 0 10px 0 ;
+    border: 2px solid black;
+    padding: 0;
+    display: flex;
+    
+} */
+.title{
+    background-color: rgb(1, 1, 87);
+   
+    padding: 10px ;
+    font-size: large;
+    color: white;
+    height: 35px;
+}
+.title> a{
+    
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+a:hover{
+    
+    color: rgb(110, 193, 221);
+    text-decoration: none;
+}
+.entry{
+    background-color: gray;
+    color:black;
+    /* height: 100%; */
+    padding: 10px;
+    height: 35px;
+}
+.shipIsNotBroken,.shipIsBroken{
+  justify-content: center;
+    text-align: center;
+    padding: 10px;
+    height: 35px;
+}
+.shipIsBroken{
+    color:red;
+}
+.shipIsNotBroken{
+    color:green;
+}
