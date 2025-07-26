@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-const Log = require('./models/log')
+const logs = require('./models/logs')
 const jsxEngine = require('jsx-view-engine')
 const methodOverride = require('method-override')
 const LogsRouter = require('./controllers/routeController')
@@ -32,6 +32,8 @@ app.use((req,res,next)=> {
 app.get('/', (req, res) => {
     res.send('Hello World')
 })
+
+app.use('/logs', LogsRouter)
 
 app.listen(PORT, () => {
     console.log('app running on port 3000 you are so good at coding...')

@@ -1,6 +1,7 @@
-const Log = require('../models/log.js');
+const Log = require('../models/logs.js');
 
 const dataController = {}
+
 dataController.index = async (req,res,next) => {
    try {
     res.locals.data.logs = await Log.find({})
@@ -21,10 +22,10 @@ dataController.destroy = async (req, res, next ) => {
 }
 
 dataController.update = async (req, res, next) => {
-    if(req.body.readyToEat === 'on'){
-        req.body.readyToEat = true;
-    } else if(req.body.readyToEat !== true) {
-        req.body.readyToEat = false;
+    if(req.body.shipIsBroken === 'on'){
+        req.body.shipIsBroken = true;
+    } else if(req.body.shipIsBroken !== true) {
+        req.body.shipIsBroken = false;
     }
     try {
       res.locals.data.log = await Log.findByIdAndUpdate(req.params.id, req.body, { new: true })
@@ -35,15 +36,18 @@ dataController.update = async (req, res, next) => {
 }
 
 dataController.create = async (req, res, next) => {
-    if(req.body.readyToEat === 'on'){
-        req.body.readyToEat = true;
-    } else if(req.body.readyToEat !== true) {
-        req.body.readyToEat = false;
+    if(req.body.shipIsBroken === 'on'){
+        req.body.shipIsBroken = true;
+    } else if(req.body.shipIsBroken !== true) {
+        req.body.shipIsBroken = false;
     }
     try {
+      // console.log(req.body)
       res.locals.data.log = await Log.create(req.body)
+      // console.log(res.locals.data.log)
       next()
     } catch (error) {
+      // console.log("here")
       res.status(400).send({ message: error.message })
     }
 }
@@ -59,6 +63,5 @@ dataController.show = async (req, res, next) => {
       res.status(400).send({ message: error.message })
     }
 }
-
 
 module.exports = dataController
