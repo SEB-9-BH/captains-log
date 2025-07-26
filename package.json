@@ -1,0 +1,31 @@
+{
+  "name": "captains-log",
+  "version": "1.0.0",
+  "description": "---\r track: \"Backend Fundamentals\"\r type: \"lab\"\r topics: \"CRUD, MVC, REST, INDUCES and JSX: Full Crud \"\r prereqs: \"HTML & CSS, Mongoose, REST, Node & NPM, Express, JavaScript, Events\"\r ---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zainab-nooh/captains-log.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/zainab-nooh/captains-log/issues"
+  },
+  "homepage": "https://github.com/zainab-nooh/captains-log#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsx-view-engine": "^1.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.16.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
