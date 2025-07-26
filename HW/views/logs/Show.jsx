@@ -14,7 +14,7 @@ function Show(props){
     return(
         <div style={style}>
             <h1 style={h1Style}>{props.log.title}</h1>
-            <a href='/logss'>Go back to Index Page</a>
+            <a href='/logs'>Go back to Index Page</a>
             <p>
                 The {props.log.title} is {props.log.entry} and 
                 {props.log.shipIsBroken? 'It is broken': 'It is not broken'}

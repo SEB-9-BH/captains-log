@@ -2,6 +2,7 @@ const Log = require('../models/log.js');
 
 const dataController = {}
 
+//index
 dataController.index = async (req,res,next) => {
    try {
     res.locals.data.logs = await Log.find({})
@@ -11,6 +12,7 @@ dataController.index = async (req,res,next) => {
   }
 }
 
+//delete
 dataController.destroy = async (req, res, next ) => {
     try {
          await Log.findOneAndDelete({'_id': req.params.id }).then(() => {
@@ -21,6 +23,7 @@ dataController.destroy = async (req, res, next ) => {
     }
 }
 
+//update
 dataController.update = async (req, res, next) => {
     if(req.body.shipIsBroken === 'on'){
         req.body.shipIsBroken = true;
@@ -35,6 +38,8 @@ dataController.update = async (req, res, next) => {
     }
 }
 
+
+//create
 dataController.create = async (req, res, next) => {
     if(req.body.shipIsBroken === 'on'){
         req.body.shipIsBroken = true;
@@ -52,6 +57,7 @@ dataController.create = async (req, res, next) => {
     }
 }
 
+//show
 dataController.show = async (req, res, next) => {
     try {
         res.locals.data.log = await Log.findById(req.params.id)
