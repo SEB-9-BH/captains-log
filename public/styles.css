@@ -1,0 +1,63 @@
+/* public/styles.css */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #fce4ec; /* Light pink background */
+  color: #333;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #e91e63; /* Darker pink for headings */
+}
+
+a {
+  color: #e91e63; /* Pink links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #e91e63; /* Pink button */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c2185b; /* Darker pink on hover */
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #e91e63;
+}
