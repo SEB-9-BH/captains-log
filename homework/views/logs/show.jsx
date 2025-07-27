@@ -1,0 +1,25 @@
+const React = require('react')
+
+const styles = {
+    backgroundColor: 'blue'
+}
+function Show(props){
+    return(
+        <div style={styles}>
+            <h1>{props.log.title}</h1>
+            <a href='/logs'>Go back to Index Page</a>
+            <p>
+                The {props.log.title} is {props.log.entry} and 
+                {props.log.shipIsBroken? 'The ship is broken': 'the ship is not broken'}
+            </p>
+              <form action={`/logs/${props.log._id}?_method=DELETE`} method="POST">
+                <input type="submit" value={`Delete this ${props.log.title}`}/>
+            </form>
+            <div>
+            <a href={`/logs/${props.log._id}/edit`}><button>{`Edit this ${props.log.title}`}</button></a>
+            </div>
+        </div>
+    )
+}
+
+module.exports = Show
