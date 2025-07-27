@@ -1,11 +1,11 @@
 const React =  require('react')
-const DefaultLayout = require('../../layouts/Layout')
+const DefaultLayout = require('../layouts/Layout')
 
 
 function Index(props) {
         const logs = props.logs
     return(
-        // <DefaultLayout title='Logs Index'>
+         <DefaultLayout title='Logs Index'>
         <div>
             <h1>Index Page</h1>
             <ul>
@@ -16,7 +16,7 @@ function Index(props) {
                 }
             </ul>
         </div>
-    // </DefaultLayout>
+     </DefaultLayout>
     )
     
 }

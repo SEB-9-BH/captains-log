@@ -4,11 +4,10 @@ const Log = require('../models/logs')
 const dataController = {}
 //Index data
 dataController.index =  async (req,res,next) => {
-        try {
-            if(!res.locals.data) res.locals.data = {}
+    try {
+        if(!res.locals.data) res.locals.data = {}
         res.locals.data.logs = await Log.find({}) // <-- data
         next()
-
     }
     catch(error) {
         res.status(400).send(

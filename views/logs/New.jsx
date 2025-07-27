@@ -1,10 +1,10 @@
 const React =  require('react')
-const DefaultLayout = require('../../layouts/Layout')
+const DefaultLayout = require('../layouts/Layout')
 
 
 function New(props) {
     return(
-        // <DefaultLayout title='New Log'>
+        <DefaultLayout title='New Log'>
         <div>
             <a href='/logs'>Go Back To Index Page</a>
             <form action='/logs' method='POST'>
@@ -14,7 +14,7 @@ function New(props) {
         <input type='submit' value='Create Log '/>  
             </form>
         </div>
-    // </DefaultLayout>    
+     </DefaultLayout>    
 )
 }
 

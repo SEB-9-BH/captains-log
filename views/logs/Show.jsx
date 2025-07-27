@@ -1,10 +1,10 @@
 const React =  require('react')
-const DefaultLayout = require('../../layouts/Layout')
+const DefaultLayout = require('../layouts/Layout')
 
 function Show(props) {
      const log = props.log
     return(
-        // <DefaultLayout title='Log Show'>
+        <DefaultLayout title='Log Show'>
         <div>
             <h1>{props.log.title}</h1>
             <a href= '/logs' >Go Back To Index Page</a>
@@ -19,7 +19,7 @@ function Show(props) {
                 <a href = {`/logs/${props.log._id}/edit`}><button>{`Edit this ${props.log.title}`}</button></a>
             </div>
         </div>
-        // </DefaultLayout>
+        </DefaultLayout>
     )
 }
 

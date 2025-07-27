@@ -1,11 +1,11 @@
 const React =  require('react')
-const DefaultLayout = require('../../layouts/Layout')
+const DefaultLayout = require('../layouts/Layout')
 
 
 function Edit(props) {
     const { title, _id, entry, shipIsBroken } = props.log
     return(
-        // <DefaultLayout title='Edit Log'>
+        <DefaultLayout title='Edit Log'>
         <div>
             <h1>{title} Edit Page</h1>
             <a href='/logs'>Go Back To Index Page</a>
@@ -17,7 +17,7 @@ function Edit(props) {
                 <input type='submit' value='Update Log' />
             </form>
         </div>
-        // </DefaultLayout>
+         </DefaultLayout>
     )
 }
 
