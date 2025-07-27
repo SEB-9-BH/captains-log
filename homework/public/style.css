@@ -1,0 +1,10 @@
+body {
+    display: grid;
+    background-color: white;
+    color: bisque;
+}
+
+h1 {
+    background-color: rgb(233, 168, 168);
+    color: rgb(185, 154, 116);
+}
